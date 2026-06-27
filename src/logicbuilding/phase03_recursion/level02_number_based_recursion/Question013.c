@@ -1,0 +1,39 @@
+#include <limits.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define LEN(a) ((int)(sizeof(a) / sizeof((a)[0])))
+
+int reverseNumber(int number) {
+    int value = abs(number);
+    int reversed = 0;
+    do {
+        reversed = reversed * 10 + value % 10;
+        value /= 10;
+    } while (value > 0);
+    return number < 0 ? -reversed : reversed;
+}
+
+bool isPalindromeNumber(int number) {
+    return abs(number) == abs(reverseNumber(number));
+}
+
+int main(void) {
+    // Question 13: : Check if a number is a palindrome using recursion.
+    int number = 12321;
+    printf("%s", (isPalindromeNumber(number) ? "Palindrome" : "Not palindrome"));
+    printf("\n");
+    return 0;
+}
+
+/*
+ * Explanation:
+ * The value stored in `number` is the input that the conditions or loops work on.
+ * The helper compares the original value with its reversed form, because a palindrome reads the same both ways.
+ * The calculated answer is printed after the logic produces the final value.
+ */

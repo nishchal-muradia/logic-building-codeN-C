@@ -1,0 +1,33 @@
+#include <limits.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define LEN(a) ((int)(sizeof(a) / sizeof((a)[0])))
+
+int main(void) {
+    // Question 35: : Count how many times a number appears consecutively in an array.
+    int numbers[] = {2, 2, 2, 3, 3, 4};
+    int target = 2, maxRun = 0, currentRun = 0;
+    for (int __i_number = 0; __i_number < (int)(sizeof(numbers) / sizeof(numbers[0])); __i_number++) { int number = numbers[__i_number];
+        if (number == target) currentRun++;
+        else currentRun = 0;
+        if (currentRun > maxRun) maxRun = currentRun;
+    }
+    printf("%s", "Longest consecutive count = ");
+    printf("%g", (double)(maxRun));
+    printf("\n");
+    return 0;
+}
+
+/*
+ * Explanation:
+ * The variables `target`, and `numbers` hold the values that the logic checks, counts, or transforms.
+ * The enhanced `for` loop visits every element in the array one by one.
+ * The if/else checks test the important cases in order: `number == target`, `currentRun > maxRun`.
+ * The print statement shows each value as soon as that value is calculated inside the loop.
+ */
