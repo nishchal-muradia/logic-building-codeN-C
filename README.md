@@ -1,8 +1,11 @@
 # logic-building-codeN-C
 
-C repository for mastering logic building before starting DSA.
+A repository by CodeWithNishchal
 
-This repo uses one file per question, grouped phase by phase. Every file contains:
+A C repository designed to help beginners master logic building before starting DSA.
+This repo trains your brain to think logically and helps you improve your logic-building skills step by step.
+
+problem Set: https://drive.google.com/file/d/1qgoctK0fsX9wjxRKJqL90LsOuKM0tBp3/view
 
 - A comment with the question text.
 - Beginner-friendly C code for that one question.
